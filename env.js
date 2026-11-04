@@ -3,7 +3,8 @@
 // NUNCA pongas la service_role key aquí, solo la anon key.
 export default function handler(req, res) {
   res.setHeader('Content-Type', 'application/javascript');
-  res.setHeader('Cache-Control', 'public, max-age=60');
+  res.setHeader('Cache-Control', 'no-store');
+
   res.send(
     `window.__ENV__ = ${JSON.stringify({
       SUPABASE_URL: process.env.SUPABASE_URL || '',
